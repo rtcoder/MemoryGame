@@ -1,0 +1,63 @@
+<!Doctype html>
+<html>
+<head>
+	<title>Memory</title>
+	<meta charset="utf-8"/>
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/main.js"></script>
+	<link type="text/css" rel="stylesheet" href="styles/default.css"/>
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<nav>
+				<ul>
+					<li class="navigate" id="newgame">New Game</li>
+					<li class="navigate" id="stopgame">Stop playing</li>
+					<li class="navigate" id="pausegame">Pause</li>
+					<li class="navigate" id="resumegame">Resume</li>
+					<li class="navigate" id="options">Options</li>
+				</ul>
+			</nav>
+<!--		Options-->
+			<div id="hiddenOptions">
+				<div class="optionsElement">
+					<label for="difficulty">difficulty</label>
+					<select name="difficulty" id="difficulty">
+						<option value="16" selected="selected">Easy</option>
+						<option value="24">Medium</option>
+						<option value="30">Hard</option>
+					</select>
+				</div>
+				<div class="optionsElement">
+					<label for="showGameTime">show game time</label>
+					<input name="showGameTime" id="showGameTime" type="checkbox" checked="checked">
+				</div>
+				<div class="optionsElement">
+					<label for="showClickNumber">show Click Number</label>
+					<input name="showClickNumber" id="showClickNumber" type="checkbox" checked="checked">
+				</div>
+				
+			</div>
+			<div id="link">Designed & Coded by <a href="http://rtcoder.netne.net">rtCoder</a></div>
+		</header>
+		<div id="gameField">
+			<div id="board">
+			</div>
+			<div id="Hello">Memory</div>
+			<div id="win">Winner!</div>
+		</div>
+		<footer>
+			<div id="timeCounter" class="infoFooter">
+				<div class="countTitle">Time:</div>
+				<div class="value">0</div>
+			</div>
+			<div id="clickCounter" class="infoFooter">
+				<div class="countTitle">Clicks:</div>
+				<div class="value">0</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
