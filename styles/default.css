@@ -135,7 +135,6 @@ select {
 	width:100px;
 	height:100px;
 	box-sizing:border-box;
-	border:2px solid #09c;
 	margin:5px;
 }
 .card.hidden{visibility:hidden}
