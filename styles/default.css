@@ -1,172 +1,95 @@
-*{color:#959596}
+*{
+	color:#cacaca;
+	float:left;
+}
+html, body, header, #gameField, footer, .back, .front{
+	 width:100%;
+}
 html, body{
-	width:100%;
-	height:100%;
-	float:left;
-	margin:0px;
-	padding:0px;
-	overflow:hidden;
-	background:#4E9A06;
-	font-family:arial, sans-serif;
+	 height:100%;
 }
-header{
-	width:100%;
-	height:50px;
-	float:left;
-	background:#2a2a2a;
+header, footer, option{
+	 background:rgba(42, 42, 42, 0.71);
 }
-#wrapper{
-	position:absolute;
-	width:100%;
-	height:100%;
-	z-index:999999999;
-	top:0;
-	left:0;
+html, body, select{
+	 margin:0;
 }
-#link{
-	float:right;
-	height:50px;
-	line-height:50px;
-	padding:0 10px 0 0;
+#win, .front, .card.current .back{
+	 display:none;
 }
-#link a{
-	text-decoration:none;
-	color:#fff
+footer, select, #newgame{
+	 font-size:13px;
 }
-#link a:hover{text-decoration:underline}
-/*menu*/
-nav{
-	height:50px;
-	line-height:50px;
-	float:left;
-	margin:0px;
-	padding:0px;
+#newgame:hover,select:hover, a{color: #fff}
+#newgame, #win, footer{
+	 text-align:center;
 }
-ul{
-	margin:0px;
-	padding:0px;
-	float:left;
-	width:100%;
-	height:100%
-}
-li.navigate{
-	width:100px;
-	height:50px;
-	float:left;
-	text-align:center;
-	box-sizing:border-box;
-	list-style:none;
-	cursor:pointer;
-}
-li.navigate:hover{
-	border-bottom:2px solid #09c
-}
-li.navigate#stopgame, li.navigate#pausegame, li.navigate#resumegame{
-	display:none
-}
-li.navigate#options{
-	border-bottom:none
-}
-li.navigate#options.opened{
-	border-bottom:2px solid #09c
-}
-/*Hidden Options*/
-div#hiddenOptions{
-	height:50px;
-	box-sizing:border-box;
-	float:left;
-	background:#2a2a2a;
-	margin:0px;
-	display:none;
-	border-bottom:2px solid #09c;
-	padding:10px;
-}
-.optionsElement{
-	display:block;
-	height:25px;
-	float:left;
-	padding:0px 5px;
-	box-sizing:border-box;
-	border-right:1px solid #09c
-}
-.optionsElement:last-child{border-right:none}
-label, select{
-	margin:0;
-	float:left;
-	height:25px;
-	line-height:25px;
-	font-size:13px;
-}
-label::after{content:':'}
-label{
-	display:block;
-	text-align:center;
-	padding:0px 5px;
-}
-select {
-	border:none;
-	background:#2a2a2a;
-	-webkit-appearance: none;
-	outline:none;
-}
-
-/*game field*/
 #gameField{
-	width:100%;
-	float:left;
-	margin:50px 0 0 0;
+	 margin: 30px 0;
+}
+#board.x16{
+	 width:440px;
+}
+#board.x24, #board.x30{
+	 width:660px;
+}
+.card.hidden{
+	 visibility:hidden;
+}
+.card.shown{
+	 visibility:visible;
+}
+.back{
+	 background:url('../photos/front.png');
+}
+.card.current .front{
+	 display:block;
+}
+#newgame, select, .back, .front{
+	height:inherit;
+	line-height:inherit;
+}
+header, footer{
+	height:30px;
+	line-height:30px;
 }
 #board, #win{
-	min-width:440px;
-	float:left;
-	display:none;
+	margin:0 auto;
 }
-#Hello, #win{
-	float:left;
-	width:440px;
+#newgame, .card{
+	cursor:pointer;
+	width:100px;
+}
+a, #board, #win{
+	float:none;
+}
+html, body{
+	padding:0px;
+	overflow-x:hidden;
+	background:#dcdcdc;
+	font-family:sans-serif;
+}
+select{
+	border:none;
+	-webkit-appearance:none;
+	outline:none;
+	background: transparent
+}
+#win{
 	height:200px;
 	line-height:200px;
-	text-align:center;
 	font-size:5em;
 }
 .card{
-	float:left;
-	cursor:pointer;
-	width:100px;
 	height:100px;
-	box-sizing:border-box;
 	margin:5px;
 }
-.card.hidden{visibility:hidden}
-.card.shown{visibility:visible}
-.back, .front{
-	float:left;
-	width:100%;
-	height:100%;
+footer, header{
+	position: fixed;
 }
-.front{
-	display:none;
+header{
+	top: 0;
 }
-.back{background:url('../photos/front.png')}
-.card.current .front{display:block}
-.card.current .back{display:none}
-/*footer*/
 footer{
-	width:100%;
-	height:30px;
-	line-height:30px;
-	position:absolute;
-	bottom:0;
-	background:#2a2a2a
-}
-.countTitle, .value, .infoFooter{
-	height:30px;
-	line-height:30px;
-	float:left;
-}
-.infoFooter{
-	margin:0 15px 0 0;
-}
-.countTitle, .value{
-	padding:0 5px;
+	bottom: 0;
 }
