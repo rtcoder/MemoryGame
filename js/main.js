@@ -1,82 +1,135 @@
-var memory = {
-    size: 16, //the number of cards
+const memory = {
     dataId: [], //array contain id's pairs
 };
-var i, remained = 0;//variable for remaining cardsvar
-
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
+const icons = [
+    'fab fa-angellist',
+    'fas fa-baseball-ball',
+    'fab fa-bitcoin',
+    'fab fa-centos',
+    'fab fa-battle-net',
+    'fab fa-gripfire',
+    'far fa-grin-alt',
+    'far fa-heart'
+];
+let stars = 0;
+const generateStars = container => {
+    container = container || $('.stars');
+    container.empty();
+    if (stars < 0) {
+        stars = 0;
+    }
+    if (stars > 4) {
+        stars = 4;
+    }
+    for (let i = 1; i <= 4; i++) {
+        let el;
+        if (stars < i) {
+            el = `<i class="far fa-star"></i>`
+        } else {
+            el = `<i class="fas fa-star"></i>`
+        }
+        container.append(el)
+    }
 }
 
-function newgame() {
-    $("#board, #win").hide();
-    init(memory.size);
-    $("#board").fadeIn();
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
+const newGame = () => {
+    init();
+    $("#gameField").removeClass('winner')
 }
+let timeout;
+const win = () => {
+    const classnames = ['', 'bronze', 'bronze', 'silver', 'gold'];
 
-function win() {
-    $("#board").hide();
-    $("#win").show();
+    $("#gameField").addClass(`winner ${classnames[stars]}`);
+    generateStars($('.stars-container'));
 }
+const onResize = () => {
+    let size;
+    let boardWidth;
+    const headerHeight = 30;
+    if ($(this).width() < ($(this).height() - headerHeight)) {
+        size = `calc(100vw / 4 - 30px)`;
+        boardWidth = `100vw`;
+    } else {
+        size = `calc((100vh - ${headerHeight}px) / 4 - 30px)`;
+        boardWidth = `calc(100vh - ${headerHeight}px)`;
+    }
+    $('.card').css({
+        width: size,
+        height: size,
+    });
+    $('#board').css({width: boardWidth})
+}
+const init = () => {
+    const board = $("#board");
 
-function init(ile) {
-    $("#board").removeAttr("class").addClass("x" + ile);
+    const tmpArray = [];
 
-    var tmpArray = [];
-
-    for (var i = 1; i <= ile / 2; i++) {
-        tmpArray.push(i);
-        tmpArray.push(i);
+    for (let icon of icons) {
+        tmpArray.push(icon);
+        tmpArray.push(icon);
     }
 
-    $("#board").empty();
+    board.empty();
 
-    for (var i = 1; i <= ile; i++) {
-        var randomKey = getRandomInt(0, tmpArray.length);
+    for (let i = 0; i < icons.length * 2; i++) {
+        const random = getRandomInt(0, tmpArray.length);
+        board.append(
+            `<div class="card" data-id="${tmpArray[random]}">
+                <i class="${tmpArray[random]} icon"></i>
+                <i class="fas fa-question question"></i>
+            </div>`
+        );
 
-        $("#board").append('<div class="card shown" data-id="' + tmpArray[randomKey] + '"><div class="front" style="background-image:url(\'photos/' + tmpArray[randomKey] + '.png\')"></div><div class="back"></div></div>');
-
-        tmpArray.splice(randomKey, 1);
+        tmpArray.splice(random, 1);
     }
 
     $(".card").click(function () {
-        $(this).toggleClass("current");
+        if ($(this).hasClass('solved')) {
+            return;
+        }
+        if ($('.current').length >= 2) {
+            $('.card').removeClass('current');
+            clearTimeout(timeout)
+            memory.dataId = [];
+        }
 
-        i = $(".current").length;
+        clearTimeout(timeout)
+        $(this).addClass('current');
 
-        setTimeout(function () {
-            if (i === 2) {//if are 2 opened cards
-                $(".card.current").each(function () {
-                    memory.dataId.push($(this).attr("data-id"));
-                });
+        memory.dataId.push($(this).attr('data-id'));
 
-                if (memory.dataId[0] === memory.dataId[1]) {//checking if opened cards are the same
-                    $(".current").addClass("hidden").removeClass("shown");
-                }
-
-                $(".card").removeClass("current");
-
-                memory.dataId = [];
-            } else if (i > 2) {
-                $(".card").removeClass("current");
+        if ($('.current').length === 2) {//if are 2 opened cards
+            if (memory.dataId[0] === memory.dataId[1]) {//checking if opened cards are the same
+                $(`.card`).each((key, item) => {
+                    if ($(item).attr('data-id') === memory.dataId[0]
+                        || $(item).attr('data-id') === memory.dataId[1]) {
+                        $(item).addClass('solved');
+                    }
+                })
+                stars++;
+            } else {
+                stars--;
             }
-
-            remained = $(".card.shown").length;
-
-            if (remained === 0)
-                win();
-        }, 300);
+            generateStars();
+            timeout = setTimeout(() => {
+                $('.card').removeClass('current');
+            }, 500)
+            memory.dataId = [];
+        }
+        if ($(".card:not(.solved)").length === 0) {
+            win();
+        }
     });
 }
-$(document).ready(function () {
-    newgame();
 
-    $("#newgame").click(newgame);
-    $("select").change(function () {//select dificulty
-        memory.size = $(this).val();
-        newgame();
-    });
-})
-        .bind("contextmenu", function (e) {//disable right click
-            e.preventDefault();
-        });
+$(document).ready(() => {
+    newGame();
+    onResize();
+    generateStars();
+});
+
+$(window).resize(onResize);
+
