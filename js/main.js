@@ -36,6 +36,8 @@ const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min
 
 const newGame = () => {
     init();
+    onResize();
+    generateStars();
     $("#gameField").removeClass('winner')
 }
 let timeout;
@@ -127,8 +129,6 @@ const init = () => {
 
 $(document).ready(() => {
     newGame();
-    onResize();
-    generateStars();
 });
 
 $(window).resize(onResize);
