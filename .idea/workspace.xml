@@ -20,63 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50b443dc-ef20-4654-aeb3-e5d33b2939fd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/front.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/pause.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/default.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +52,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1599131481392</updated>
-      <workItem from="1599131482731" duration="14545000" />
+      <workItem from="1599131482731" duration="15159000" />
     </task>
     <servers />
   </component>
