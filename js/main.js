@@ -80,8 +80,14 @@ const init = () => {
         const random = getRandomInt(0, tmpArray.length);
         board.append(
             `<div class="card" data-id="${tmpArray[random]}">
-                <i class="${tmpArray[random]} icon"></i>
-                <i class="fas fa-question question"></i>
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <i class="fas fa-question question"></i>
+                    </div>
+                    <div class="flip-card-back">
+                        <i class="${tmpArray[random]} icon"></i>
+                    </div>
+                </div>
             </div>`
         );
 
