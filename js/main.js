@@ -99,10 +99,13 @@ const init = () => {
         }
 
         clearTimeout(timeout)
-        $(this).addClass('current');
+        $(this).toggleClass('current');
 
         memory.dataId.push($(this).attr('data-id'));
 
+        if ($('.current').length === 0) {//if are 2 opened cards
+            memory.dataId = [];
+        }
         if ($('.current').length === 2) {//if are 2 opened cards
             if (memory.dataId[0] === memory.dataId[1]) {//checking if opened cards are the same
                 $(`.card`).each((key, item) => {
